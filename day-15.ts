@@ -1,5 +1,5 @@
-type Box<Toy extends string, N extends number, T extends string[] = []> =
-    T['length'] extends N
+type Box<Toy extends string, N extends number, T extends string[] = []>
+  = T['length'] extends N
     ? T
     : Box<Toy, N, [...T, Toy]>
 
