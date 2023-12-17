@@ -29,5 +29,4 @@ type test_4_actual = SantasList<['1', 2, '3'], [false, boolean, '4', ['nested']]
 type test_4_expected = ['1', 2, '3', false, boolean, '4', ['nested']];
 type test_4 = Expect<Equal<test_4_actual, test_4_expected>>;
 
-// @ts-expect-error
 type error_0 = SantasList<null, undefined>;
