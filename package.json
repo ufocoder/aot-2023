@@ -7,6 +7,9 @@
   },
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "type-testing": "^0.2.0",
     "typescript": "^5.3.3"
