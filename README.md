@@ -1,6 +1,8 @@
 Advent of TypeScript 2023 solutions
 ===================================
 
+[![Build](https://github.com/ufocoder/aot-2023/actions/workflows/test.yml/badge.svg)](https://github.com/ufocoder/aot-2023/actions/workflows/test.yml)
+
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
 | [Day One](./day-01/test.ts) <br /><br /> [<img src="./day-01/image.webp" height="128" />](./day-01/test.ts)  | [Day Two](./day-02/test.ts) <br /><br /> [<img src="./day-02/image.webp" height="128" />](./day-02/test.ts)  | [Day Three](./day-03/test.ts) <br /><br /> [<img src="./day-03/image.webp" height="128" />](./day-03/test.ts)  | [Day Four](./day-04/test.ts) <br /><br /> [<img src="./day-04/image.webp" height="128" />](./day-04/test.ts)  |
