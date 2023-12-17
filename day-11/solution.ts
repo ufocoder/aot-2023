@@ -1,4 +1,4 @@
-type SantaListProtector<T> =
+export type SantaListProtector<T> =
   T extends Function 
     ? T 
     : T extends object 

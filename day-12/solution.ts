@@ -1,4 +1,4 @@
-type FindSanta<T extends any[], Accumulator extends any[] = []> 
+export type FindSanta<T extends any[], Accumulator extends any[] = []> 
   = T extends [infer Head, ...infer Tail]
     ? Head extends '🎅🏼'
       ? Accumulator['length']

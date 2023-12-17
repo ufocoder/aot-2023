@@ -10,7 +10,7 @@ type Increment<N extends number>
       : never
     : never;
 
-type DayCounter<From extends number, To extends number>
+export type DayCounter<From extends number, To extends number>
   = To extends From 
     ? To 
     : From | DayCounter<Increment<From>, To>

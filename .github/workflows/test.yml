@@ -1,0 +1,16 @@
+name: Build
+on:
+  pull_request
+
+jobs:
+  test_types:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Test
+        run: yarn && yarn test

@@ -1,1 +1,1 @@
-type CookieSurveyInput<T> = keyof T;
+export type CookieSurveyInput<T> = keyof T;

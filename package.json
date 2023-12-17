@@ -1,0 +1,14 @@
+{
+  "name": "aot-2023",
+  "version": "1.0.0",
+  "description": "Advent of TypeScript solutions",
+  "scripts": {
+    "test": "tsc --noEmit ./**/test.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "type-testing": "^0.2.0",
+    "typescript": "^5.3.3"
+  }
+}

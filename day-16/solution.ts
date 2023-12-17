@@ -19,4 +19,4 @@ type FindRow<T extends any[], Accumulator extends any[] = []>
       : FindRow<Tail, [...Accumulator, any]>
     : never
 
-type FindSanta<T extends any[]> = FindRow<MapRows<T>>
+export type FindSanta<T extends any[]> = FindRow<MapRows<T>>
