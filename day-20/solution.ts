@@ -116,17 +116,16 @@ type UppercaseLetters = {
 };
   
 type Alphabet = keyof Letters
-type LinesNumber = 0 | 1 | 2
 
 type UppercaseLetter<Char extends string>
     = Char extends keyof UppercaseLetters
         ? UppercaseLetters[Char]
         : Char
 
-type RenderLetterLine<Letter extends Alphabet, LineNumber extends LinesNumber>
+type RenderLetterLine<Letter extends Alphabet, LineNumber extends number>
     = Letters[Letter][LineNumber]
 
-type RenderLettersLine<S extends string, LineNumber extends LinesNumber>
+type RenderLettersLine<S extends string, LineNumber extends number>
     = S extends `${infer Head}${infer Tail}`
     ? UppercaseLetter<Head> extends Alphabet
         ? `${RenderLetterLine<UppercaseLetter<Head>, LineNumber>}${RenderLettersLine<Tail, LineNumber>}`
@@ -136,7 +135,7 @@ type RenderLettersLine<S extends string, LineNumber extends LinesNumber>
 type RenderLettersLines<S extends string> 
     = [RenderLettersLine<S, 0>, RenderLettersLine<S, 1>, RenderLettersLine<S, 2>]
 
-export type ToAsciiArt<S extends string, Accumulator extends string[] = []>
+export type ToAsciiArt<S extends string>
     = S extends `${infer T}\n${infer U}` 
     ? [...RenderLettersLines<T>, ...ToAsciiArt<U>]
     : RenderLettersLines<S>
