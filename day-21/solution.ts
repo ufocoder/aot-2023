@@ -18,7 +18,7 @@ type EmptyBoard = [
   ['  ', '  ', '  ']
 ];
 
-type NewGame = {
+export type NewGame = {
   board: EmptyBoard;
   state: '❌';
 };
@@ -133,7 +133,7 @@ type NextGame<Board extends TicTactToeBoard, State extends TicTacToeChip> =
         state: NextState<Board, State>
     }
 
-type TicTacToe<Game extends TicTacToeGame, Position extends TicTacToePositions>
+export type TicTacToe<Game extends TicTacToeGame, Position extends TicTacToePositions>
     = Game['state'] extends TicTacToeChip
         ? CanNextGame<Game['board'], Position> extends true
             ? NextGame<
