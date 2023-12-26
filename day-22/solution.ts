@@ -29,7 +29,7 @@ type Reindeer = Dasher | Dancer | Prancer | Vixen | Comet | Cupid | Donner | Bli
 
 type Sudoku = Reindeer[][][]
 
-type ValidateRow<T extends Reindeer[]> 
+type ValidateRow<T extends Reindeer[]>
     = T extends [infer Column extends Reindeer, ...infer Columns extends Reindeer[]]
     ? Column extends Columns[number] 
       ? false
@@ -48,9 +48,9 @@ type FlatRow<T extends Reindeer[][], Accumulator extends Reindeer[] = []>
     ? FlatRow<Columns, [...Accumulator, ...Column]>
     : Accumulator
 
-type FlatRows<T extends Reindeer[][][], Accumulator extends Reindeer[][] = []> 
+type FlatSudoku<T extends Reindeer[][][], Accumulator extends Reindeer[][] = []> 
     = T extends [infer Columns extends Reindeer[][], ...infer OtherColumns extends Reindeer[][][]]
-    ? FlatRows<OtherColumns, [...Accumulator, FlatRow<Columns>]>
+    ? FlatSudoku<OtherColumns, [...Accumulator, FlatRow<Columns>]>
     : Accumulator
 
 type TransposeMatrix<M extends Reindeer[][]> = {
@@ -133,8 +133,8 @@ type ValidateSubregions<T extends Sudoku> = T extends [
   : never
 
 export type Validate<T extends Sudoku> = 
-  ValidateRows<FlatRows<T>> extends true
+  ValidateRows<FlatSudoku<T>> extends true
   ? true
-  : ValidateColumns<FlatRows<T>> extends true
+  : ValidateColumns<FlatSudoku<T>> extends true
     ? true
     : ValidateSubregions<T>
