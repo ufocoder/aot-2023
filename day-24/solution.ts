@@ -53,8 +53,6 @@ type Decrement<N extends number>
 
 // 
 
-
-
 type Position = [number, number]
 
 type MovePosition<P extends Position, D extends Directions>
@@ -116,15 +114,6 @@ type ChangeSantaPosition<Maze extends MazeMatrix, Numbers extends number[], Prev
         NextPosition, 
         "🎅"
     >
-
-type MazeTest = [
-    ["🎄", "🎅", "🎄", ],
-    ["🎄", "  ", "🎄", ],
-    ["🎄", "🎄", "🎄", ],
-];
-
-type P3 = ChangeSantaPosition<ChangeSantaPosition<MazeTest, [0,1,2], [0,1], [1,1]>, [0,1,2], [0,1], [1,2]>
-
     
 type MoveSantaPosition<Maze extends MazeMatrix, SantaPosition extends Position, NextPosition extends Position> 
     = IsWinPosition<NextPosition, MazeWidth<Maze>> extends true
