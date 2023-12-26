@@ -103,5 +103,5 @@ type RenderLettersLines<S extends string> = [
 
 export type ToAsciiArt<S extends string>
   = S extends `${infer T}\n${infer U}` 
-  ? [...RenderLettersLines<T>, ...ToAsciiArt<U>]
-  : RenderLettersLines<S>
+  ? [...RenderLettersLines<Uppercase<T>>, ...ToAsciiArt<U>]
+  : RenderLettersLines<Uppercase<S>>
